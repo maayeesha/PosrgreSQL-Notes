@@ -40,40 +40,40 @@ The database client software can be desktop based or web based. It can be simple
 
 |                                                              |                                                                                |
 | ------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| - SELECT column1,column2 FROM table_name                     | returns columns/set of records from the tables of a database                   |
-| - CREATE DATABASE database_name; (put the semi-colon)        | Creates a new databse                                                          |
-| - DROP DATABASE database_name;                               | Deletes the database (Be aware while using it, removes all the data in seconds)|
-| - CREATE table_name (                                        | Creates a table                                                                |
+|  SELECT column1,column2 FROM table_name                     | returns columns/set of records from the tables of a database                   |
+|  CREATE DATABASE database_name; (put the semi-colon)        | Creates a new databse                                                          |
+|  DROP DATABASE database_name;                               | Deletes the database (Be aware while using it, removes all the data in seconds)|
+|  CREATE table_name (                                        | Creates a table                                                                |
 |         column_name + data type + constraints (if any)       |                                                                                |
 |                  )                                           |                                                                                |
-| - INSERT INTO table_name (column1, column2, column3, ...)    | Insert records                                                                 |
-| - VALUES (value1, value2, value3, ...);                      |                                                                                |
-| - SELECT * FROM table_name                                   | the * sign selects all the rows from the table                                 |
-| - ORDER BY (SELECT * FROM table_name ORDER BY column ASC)    | Sorts the data                                                                 |
+|  INSERT INTO table_name (column1, column2, column3, ...)    | Insert records                                                                 |
+|  VALUES (value1, value2, value3, ...);                      |                                                                                |
+|  SELECT * FROM table_name                                   | the * sign selects all the rows from the table                                 |
+|  ORDER BY (SELECT * FROM table_name ORDER BY column ASC)    | Sorts the data                                                                 |
 |    ASC (For ascending order)				       |										|
 |    DESC (For descending order)			       |										|
-| - DISTINCT 						       | Prevents showing the same records in a column					|
+|  DISTINCT 						       | Prevents showing the same records in a column					|
 |   SELECT DISTINCT column FROM table ORDER BY column;         |										|
-| - WHERE 						       | Shows the data according to preferred choice					|
+|  WHERE 						       | Shows the data according to preferred choice					|
 | SELECT * FROM table 					       |										|
 | WHERE column(e.g: gender) = 'record' (e.g: Female)            |										|
-| - AND,OR 						       | Allows the user to test multiple conditions                                    |                      	
+|  AND,OR 						       | Allows the user to test multiple conditions                                    |                      	
 | WHERE condition1                                             |         (Be aware of the order of operation parantheses)                       |
 | AND condition2                                               |                                                                                |
 | ...                                                          |                                                                                |
 | OR condition_n;                                              |                                                                                |
-| - Comparison Operators (>,<,>=,<=,<>) ('<>' for Not equal)   |                                                                                |
-| - LIMIT						       | Limits the number of shown rows						|				
+|  Comparison Operators (>,<,>=,<=,<>) ('<>' for Not equal)   |                                                                                |
+|  LIMIT						       | Limits the number of shown rows						|				
 | SELECT * FROM table_name LIMIT number_of_rows;	       | 	       									|
-| - OFFSET (SELECT * FROM table OFFSET digit)		       | Only shows the rows after the 'digit' mentioned 				| 
-| - FETCH (e.g: FETCH 5 ROWS ONLY)			       | Fetch only required data from the table					|
-| - IN (value IN (value1,value2,...))                          | Replaces several OR/ANDs							|
-| - BETWEEN 						       | Used to show records in a certain range					|
+|  OFFSET (SELECT * FROM table OFFSET digit)		       | Only shows the rows after the 'digit' mentioned 				| 
+|  FETCH (e.g: FETCH 5 ROWS ONLY)			       | Fetch only required data from the table					|
+|  IN (value IN (value1,value2,...))                          | Replaces several OR/ANDs							|
+|  BETWEEN 						       | Used to show records in a certain range					|
 | e.g: SELECT * FROM table 				       |										|
 | WHERE birthday BETWEEN DATE '2000-01-01' AND '2020-08-20';   |						       				|
-| - LIKE/ILIKE (ILIKE isn't case sensitive') / (LIKE '---@%')  | Shows the records of specified characters. '%' is used as wildcard             | 	
-| - GROUP BY                                                   | This along with the COUNT() function shows the grouped data			|
-| - COUNT() / HAVING COUNT()                                   |										|
+|  LIKE/ILIKE (ILIKE isn't case sensitive') / (LIKE '---@%')  | Shows the records of specified characters. '%' is used as wildcard             | 	
+|  GROUP BY                                                   | This along with the COUNT() function shows the grouped data			|
+|  COUNT() / HAVING COUNT()                                   |										|
 |							       |                                                                                |
 
 
@@ -82,12 +82,12 @@ The database client software can be desktop based or web based. It can be simple
 ### Command line Utilities in PostgreSQL     
 |                                                              |                                                                       |
 | ------------------------------------------------------------ | ----------------------------------------------------------------------|
-| - \?                                                         | shows all the commands                                                |
-| - \l                                                         | to get the list of all available databases                            |
-| - \dt                                                        | Enlists the available tables in the current database                  |
-| - \c                                                         | Connects to another database                                          |
-| - \d                                                         | List of visible tables,views and sequences                            |
-| - \i 'C:/Users/Zaima Fariha/Downloads/person.sql'(filepath)  | Reads input from the file. (Must include the single quotation in the  |
+|  \?                                                         | shows all the commands                                                |
+|  \l                                                         | to get the list of all available databases                            |
+|  \dt                                                        | Enlists the available tables in the current database                  |
+|  \c                                                         | Connects to another database                                          |
+|  \d                                                         | List of visible tables,views and sequences                            |
+|  \i 'C:/Users/Zaima Fariha/Downloads/person.sql'(filepath)  | Reads input from the file. (Must include the single quotation in the  |
 |                                                              | address while working from windows)                                   | 
 
 # How to generate data without inserting them manually?
