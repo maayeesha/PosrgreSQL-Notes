@@ -74,8 +74,21 @@ The database client software can be desktop based or web based. It can be simple
 |  LIKE/ILIKE (ILIKE isn't case sensitive') / (LIKE '---@%')  | Shows the records of specified characters. '%' is used as wildcard             | 	
 |  GROUP BY                                                   | This along with the COUNT() function shows the grouped data			|
 |  COUNT() / HAVING COUNT()                                   |										|
-|							       |                                                                                |
-
+|		COALESCE(argument 1, argument 2....) 				        | The COALESCE function accepts an unlimited number of arguments.|
+|                                                   |  It returns the first argument that is not null. If all arguments|
+|                                                   |  are null, the COALESCE function will return null.     |                                                                    | NULLIF()                                           | The NULLIF() function returns NULL if two expressions |
+|                                                    | are equal, otherwise it returns the first expression. |
+| NOW() /NOW():: time  (timestamp)    | Shows the actual time |
+| SELECT NOW() - INTERVAL '10 Year'   | Shows the difference of date (e.g: here it shows the date of 10 years ago,'+' is used for future dates ) |
+| SELECT EXTRACT(YEAR FROM NOW()) (YEAR/DAY/DOW-day of the week/CENTURY/MILISECOND)     | Extract a certain part of the date from a given year |
+| ALTER    | Used for modifying data in a table |
+| DELETE |  Deletes the data |
+| UPDATE | Updates a row |
+| (e.g: UPDATE table_name SET column_name = '...' WHERE id = 1) |                   |
+| ON CONFLICT | can be used to specify an alternative action to raising a **unique** constraint or exclusion                              constraint violation error |
+| JOIN | Joins two tables |
+| LEFT JOIN | Joins two tables which have no foreign key relationship |
+| 
 
 
 
@@ -89,7 +102,7 @@ The database client software can be desktop based or web based. It can be simple
 |  \d                                                         | List of visible tables,views and sequences                            |
 |  \i 'C:/Users/Zaima Fariha/Downloads/person.sql'(filepath)  | Reads input from the file. (Must include the single quotation in the  |
 |                                                              | address while working from windows)                                   | 
-
+| \x     | Shows the expanded display |
 # How to generate data without inserting them manually?
 - Download the SQL database (Check out [this website](https://www.mockaroo.com/) for random data generation)
 - use **\i 'filepath'** command 
@@ -98,3 +111,13 @@ The database client software can be desktop based or web based. It can be simple
 
 # [Data Types](https://www.postgresql.org/docs/9.5/datatype.htm) in PostgreSQL
 
+# UNIQUE Constraints
+The UNIQUE constraint ensures that all values in a column are different.
+SELECT column_name COUNT() FROM table_name GROUP BY column_name HAVING COUNT() > 1; - Helps the user to find a Duplicate 
+# How to export query results to CSV?
+- \copy table_name TO 'file path' DELIMITER ',' CSV HEADER ; 
+- 
+# Notes:
+- If a row already exists and has a primary key, manually inserting data in the same row will result in duplicate key violation.
+- Constraints mean whether it's primary key,foreign key etc.
+- Foreign keys can be only assigned when there is a relation between two tables 
